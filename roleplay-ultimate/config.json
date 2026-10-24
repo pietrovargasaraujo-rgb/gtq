@@ -1,0 +1,6 @@
+{
+  "initial_money": 150,
+  "transaction_amount": 100,
+  "work_card_fee": 10,
+  "autosave_ms": 30000
+}
