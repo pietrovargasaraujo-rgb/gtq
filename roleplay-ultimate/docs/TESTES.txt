@@ -1,0 +1,31 @@
+GTA SA RP Ultimate 0.1.0-alpha
+
+Ambiente: Linux, Python 3.12; VM de testes propria.
+NENHUMA execucao dentro do GTA/Windows foi realizada.
+Os testes exercitam os bytes emitidos do script em uma VM restrita.
+Nao comprovam ABI real, carregamento CLEO, teclado, UI ou compatibilidade com outros mods.
+
+test_activation_cancel_leaves_money_and_files_unchanged (test_binary.Tests.test_activation_cancel_leaves_money_and_files_unchanged) ... ok
+test_activation_corrupt_profile_does_not_reset (test_binary.Tests.test_activation_corrupt_profile_does_not_reset) ... ok
+test_activation_creates_only_after_confirmation (test_binary.Tests.test_activation_creates_only_after_confirmation) ... ok
+test_activation_disk_error_leaves_cash_unchanged (test_binary.Tests.test_activation_disk_error_leaves_cash_unchanged) ... ok
+test_bank_requires_documents (test_binary.Tests.test_bank_requires_documents) ... ok
+test_checksum_and_invalid_schema_rejected (test_binary.Tests.test_checksum_and_invalid_schema_rejected) ... ok
+test_config_changes_output_behavior (test_binary.Tests.test_config_changes_output_behavior) ... ok
+test_deposit_and_withdraw_and_limits (test_binary.Tests.test_deposit_and_withdraw_and_limits) ... ok
+test_documents_require_id_and_charge_once (test_binary.Tests.test_documents_require_id_and_charge_once) ... ok
+test_every_jump_targets_instruction (test_binary.Tests.test_every_jump_targets_instruction) ... ok
+test_generation_limit (test_binary.Tests.test_generation_limit) ... ok
+test_new_profile_round_trip (test_binary.Tests.test_new_profile_round_trip) ... ok
+test_operand_encoding_known_vectors (test_binary.Tests.test_operand_encoding_known_vectors) ... ok
+test_randomized_conservation_and_recovery (test_binary.Tests.test_randomized_conservation_and_recovery) ... ok
+test_truncated_latest_uses_backup (test_binary.Tests.test_truncated_latest_uses_backup) ... ok
+test_work_card_insufficient_cash (test_binary.Tests.test_work_card_insufficient_cash) ... ok
+test_write_failure_preserves_previous_slot (test_binary.Tests.test_write_failure_preserves_previous_slot) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.199s
+
+OK
+
+Pendentes no jogo: instalacao/carregamento CLEO; teclas F6/F7/F8; saldo visual; persistencia entre reinicios; permissao de escrita; conflitos com Essentials; estabilidade prolongada.
