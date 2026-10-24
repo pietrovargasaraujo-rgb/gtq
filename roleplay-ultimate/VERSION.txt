@@ -1,0 +1,2 @@
+0.1.0-alpha
+Prototipo tecnico experimental; teste no GTA pendente.
