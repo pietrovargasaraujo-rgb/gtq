@@ -1,0 +1,43 @@
+name: RP Ultimate — build
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'roleplay-ultimate/**'
+      - '.github/workflows/rp-ultimate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build CLEO script
+        working-directory: roleplay-ultimate
+        run: python tools/build.py
+      - name: Test emitted bytecode
+        working-directory: roleplay-ultimate
+        run: python -m unittest discover -s tests -v
+      - name: Check bundled binary representation
+        working-directory: roleplay-ultimate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          p = Path("instalar/CLEO/RP_Ultimate.cs")
+          assert p.read_bytes() == base64.b64decode(p.with_suffix(".cs.b64").read_text())
+          PY
+      - name: Upload experimental package
+        uses: actions/upload-artifact@v4
+        with:
+          name: GTA_SA_RP_Ultimate_0.1.0_alpha
+          path: |
+            roleplay-ultimate/
+            !roleplay-ultimate/**/__pycache__/**
+          retention-days: 90
